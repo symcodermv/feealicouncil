@@ -916,6 +916,14 @@
 .invoice-original-pdf { width: 100%; height: 70dvh; border: 1px solid #e0e7f1; border-radius: 12px; background: white; }
 @media (max-width:600px) { #dashboard .collection-updates { overflow: visible; } #dashboard .collection-bills-button { flex-shrink: 0; margin-top: 12px; } }
 @media (max-width:360px) { .invoice-body { padding-left: 14px; padding-right: 14px; } .full-invoice-header { padding-left: 14px; padding-right: 14px; } .invoice-total-card { padding: 24px 18px; } .full-invoice-status { right: 15px; font-size: 10px; } .monthly-invoice-middle { font-size: 12px; gap: 8px; } .monthly-invoice-middle > span { font-size: 15px; } }
+#dashboard .balance-card.has-ready-bill{background:linear-gradient(115deg,#d94750,#ef6b66);box-shadow:0 7px 20px #d947501a}
+#dashboard .collection-bills-button.has-ready-bill{background:linear-gradient(110deg,#fff0f1,#fff5f3);border-color:#f0b6ba;color:#b52e3c}
+#dashboard .collection-bills-button.has-ready-bill .collection-bills-icon{color:#ce3f4e;background:#fff}
+#dashboard .collection-bills-button.has-ready-bill small{color:#bc6570}
+#dashboard .collection-bills-button.has-ready-bill .collection-bills-arrow{color:#cf5260}
+html[data-theme=dark] #dashboard .collection-bills-button.has-ready-bill{background:linear-gradient(110deg,#381d27,#2d1d27);border-color:#743643;color:#ffadb5}
+html[data-theme=dark] #dashboard .collection-bills-button.has-ready-bill .collection-bills-icon{background:#482431;color:#ffadb5}
+html[data-theme=dark] #dashboard .collection-bills-button.has-ready-bill small,html[data-theme=dark] #dashboard .collection-bills-button.has-ready-bill .collection-bills-arrow{color:#e6939e}
 
 </style>
 <style>
@@ -3211,6 +3219,7 @@ function refreshThemeScreen(screenId) {
 function refreshThemeData() {
     const bills = themeBills();
     const pending = bills.filter(bill => !bill.paid);
+    document.querySelector('#dashboard .balance-card').classList.toggle('has-ready-bill',pending.length>0);
     document.getElementById('previewBadge').hidden = !themePreview;
     document.getElementById('outstandingAmount').textContent = money(pending.reduce((sum,bill) => sum+bill.amount,0));
     document.getElementById('outstandingDescription').textContent = pending.length ? `Currently you have ${pending.length} bills to settle` : 'You have no outstanding waste collection bills';
@@ -3629,6 +3638,7 @@ function wfResultCard(record) {
     details.append(wfElement('p','',[record.zoneName,record.registrationNumber].filter(Boolean).join(' · ')));card.append(details);return card;
 }
 function renderCustomerCollections() {
+    window.FeealiBills?.updateReadyState();
     const container=document.getElementById('customerCollectionFeed');container.replaceChildren();
     const property=latestUserForms.find(form=>form.formId===activeEntityId);
     const dialog=document.getElementById('collectionDayDialog');if(dialog?.open){if(collectionDetailsEntity===activeEntityId&&property)openCollectionDayDetails(collectionDetailsDay);else dialog.close();}
@@ -4029,6 +4039,10 @@ renderSupervisorDuty=function(){if(supervisorPage==='dashboard')return superviso
         return issued && Number.isFinite(issued.getTime()) ? monthKey(issued) : '';
     }
     function currentForms() { return latestUserForms.filter(form => !activeEntityId || form.formId === activeEntityId).flatMap(form => FeealiInvoiceRecords(form)); }
+    function updateReadyState() {
+        const ready=currentForms().some(form=>form.invoice.paymentStatus!=='approved');
+        document.querySelector('.collection-bills-button')?.classList.toggle('has-ready-bill',ready);
+    }
     function render() {
         const forms = currentForms(), month = byId('billingMonth').value;
         const property = latestUserForms.find(form => form.formId === activeEntityId);
@@ -4126,7 +4140,7 @@ renderSupervisorDuty=function(){if(supervisorPage==='dashboard')return superviso
     function paymentSubmitted() {
         updatePayment(revision,currentInvoiceForm.invoice,{status:'pending_review'});
     }
-    window.FeealiBills={open,render,invoiceMonth,showInvoice,updatePayment,paymentError,closeInvoice,paymentSubmitted};
+    window.FeealiBills={open,render,invoiceMonth,showInvoice,updatePayment,paymentError,closeInvoice,paymentSubmitted,updateReadyState};
 })();
 
 </script>
