@@ -1190,6 +1190,7 @@ html[data-theme=dark] #staffWorkspace{--supervisor-bg:#080e17;--supervisor-card:
 .supervisor-overview-grid[hidden]{display:none!important}.collection-proof-image{display:block;width:100%;max-width:100%;max-height:420px;object-fit:contain;border-radius:14px;margin:12px 0;background:#edf1f6}.collection-proof-image[hidden]{display:none!important}.collection-proof-details summary{font-size:13px;font-weight:650;cursor:pointer;padding:10px 0}.collection-council-recipients{min-width:0;padding:14px;border:1px solid #dce5f0;border-radius:14px}.collection-council-recipients legend{font-size:13px;font-weight:650;padding:0 5px}.collection-recipient-choice{display:flex!important;align-items:center;gap:10px;padding:10px;border-radius:10px;background:var(--supervisor-card,#fff);border:1px solid var(--supervisor-line,#e2e8f0);margin:7px 0!important;cursor:pointer}.collection-recipient-choice input[type=checkbox]{width:18px!important;height:18px;flex:0 0 18px}.collection-recipient-choice span{font-size:12px;line-height:1.7}.council-member-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px;margin-top:22px}.council-portal{background:#f4f7fb;color:#253c5c;min-height:100vh}.council-portal-header{position:static!important;display:flex;justify-content:space-between;align-items:center;padding:24px max(24px,calc((100vw - 1180px)/2));background:#fff;border-bottom:1px solid #dfe7f2}.council-portal-header h1{font-size:23px;margin:7px 0}.council-portal-header p{font-size:13px;color:#7387a4;margin:0}.council-eyebrow{font-size:10px;letter-spacing:2px;font-weight:750;color:#5274a5}.council-portal-body{max-width:1180px;margin:auto;padding:30px 24px}.council-portal-body>h2{font-size:28px;letter-spacing:-.7px;margin:0 0 8px}.council-muted{font-size:13px;color:#7a8ba3;line-height:1.7}.council-filters{display:grid;grid-template-columns:180px minmax(200px,1fr) 180px;gap:12px;padding:20px;background:#fff;border:1px solid #dce5f1;border-radius:18px;margin:25px 0}.council-filters input:not([type=checkbox]),.council-filters select{width:100%;box-sizing:border-box;background:#f5f8fc;color:#334e72;border:1px solid #dce5ef;border-radius:12px;padding:13px;font:inherit;font-size:13px}.council-mine{display:flex;gap:9px;align-items:center;grid-column:1/-1;font-size:13px;margin:0}.council-mine input{width:auto}.council-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.council-stats article{padding:22px;background:#fff;border:1px solid #dce5f1;border-radius:18px}.council-stats span{font-size:12px;color:#7d8ea5;display:block}.council-stats strong{font-size:28px;display:block;margin-top:10px;color:#365f98}.council-record-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.council-record{min-width:0;padding:22px;border:1px solid #dce5ef;background:#fff;border-radius:20px}.council-record-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.council-record h3{font-size:18px;margin:0}.council-record p{font-size:13px;line-height:1.8}.council-assigned-issue{background:#fff4df;color:#986d2c;padding:10px 14px;border-radius:12px}.council-error{padding:20px;color:#b43d3d}.council-record details summary{font-size:13px;font-weight:700;cursor:pointer;padding:12px 0}@media(max-width:700px){.council-filters{grid-template-columns:1fr 1fr}.council-filters input[type=search]{grid-column:1/-1}.council-record-grid{grid-template-columns:1fr}.council-stats{grid-template-columns:1fr 1fr}.council-portal-body{padding:24px 16px}}
 
 .council-history-item{border-top:1px solid #e1e8f2;padding:13px 0}.council-history-item>strong{font-size:13px}.council-address-history{margin-top:12px}.collection-proof-image{max-height:360px}.council-portal .hidden{display:none!important}
+.screen.council-portal{min-height:0;padding:0 0 max(20px,env(safe-area-inset-bottom));overflow-y:auto}.screen.council-portal .council-portal-header{padding:20px 16px;gap:12px}.screen.council-portal .small-btn{border:1px solid #dfe7f2;border-radius:9px;background:#fff;color:#345c9f;padding:10px 14px;min-height:44px;flex-shrink:0}.screen.council-portal .council-portal-body{padding:20px 16px}.screen.council-portal .council-filters input,.screen.council-portal .council-filters select{min-width:0;max-width:100%}
 
 </style><style>
 .invoice-save-actions{display:flex;gap:10px;margin:18px 0 24px;flex-wrap:wrap}.invoice-save-button,.invoice-share-button{display:flex;justify-content:center;align-items:center;flex:1;min-height:50px;padding:14px;border-radius:13px;border:0;font:inherit;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer}.invoice-save-button{background:#345c9f;color:#fff}.invoice-save-button[aria-disabled=true]{background:#e8edf5;color:#8b9bb2;cursor:wait}.invoice-share-button{background:#edf2fa;color:#345c9f}.invoice-save-button:focus-visible,.invoice-share-button:focus-visible{outline:3px solid #79bafb;outline-offset:3px}
@@ -1200,6 +1201,62 @@ html[data-theme=dark] #staffWorkspace{--supervisor-bg:#080e17;--supervisor-card:
 @media(prefers-reduced-motion:reduce){#sidebarOverlay .side-menu{transition:none}}
 html[data-theme=dark] .invoice-share-button{background:#1b2c44;color:#b4cceb}html[data-theme=dark] .invoice-save-button[aria-disabled=true]{background:#1d2c42;color:#8a9eb9}
 @media(min-height:600px) and (max-height:740px){#sidebarOverlay .side-menu{padding:14px 16px}#serviceMenu .menu-brand p{display:none}#serviceMenu .side-menu-head{margin-bottom:9px}#serviceMenu .quick-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px}#serviceMenu .quick-actions button,#serviceMenu .quick-actions #myApplicationAction{min-height:42px;font-size:11px;padding:6px 0}#serviceMenu .supervisor-shared-nav .quick-actions button:last-child{grid-column:1/-1}#serviceMenu.i18n-dv .quick-actions button{font-size:13px;line-height:1.4}#serviceMenu .appearance-options button,#serviceMenu .menu-language-buttons button{min-height:30px}#serviceMenu .menu-brand h2{font-size:21px}#serviceMenu .menu-language-picker,#serviceMenu .appearance-setting{margin-bottom:8px}}
+
+</style><style>
+/* Council members share this address directory in the app and admin portal. */
+#councilMemberDashboard.council-portal{--council-bg:#f3f6fb;--council-surface:#fff;--council-ink:#203653;--council-muted:#62758e;--council-line:#dce5f0;--council-control:#edf3fb;background:var(--council-bg);color:var(--council-ink)}
+#councilMemberDashboard .council-portal-header{background:var(--council-surface);border-color:var(--council-line);padding-top:max(20px,env(safe-area-inset-top));gap:16px}
+#councilMemberDashboard .council-portal-body{width:100%;min-width:0}
+#councilMemberDashboard :is(h1,h2,h3,strong){color:var(--council-ink)}
+#councilMemberDashboard :is(.council-muted,.council-portal-header p,.council-stats span,.council-list-caption){color:var(--council-muted)}
+#councilMemberDashboard .council-eyebrow{color:#497cb5;letter-spacing:1.8px}
+#councilMemberDashboard .council-portal-body>h2{font-size:24px;line-height:1.3}
+#councilMemberDashboard .council-filters{margin:18px 0;padding:14px;background:var(--council-surface);border-color:var(--council-line);gap:10px;border-radius:16px}
+#councilMemberDashboard .council-filters :is(input:not([type=checkbox]),select){background:var(--council-control);color:var(--council-ink);border-color:var(--council-line);min-height:44px;font-size:14px}
+#councilMemberDashboard .council-filters input::placeholder{color:var(--council-muted);opacity:1}
+#councilMemberDashboard .council-mine{color:var(--council-ink);min-height:32px}
+#councilMemberDashboard .council-mine input{accent-color:#4476b4;width:18px;height:18px}
+#councilMemberDashboard .council-stats{gap:10px;margin:16px 0}
+#councilMemberDashboard .council-stats article{background:var(--council-surface);border-color:var(--council-line);padding:16px;border-radius:15px;border-top:3px solid #7899cb}
+#councilMemberDashboard .council-stats article:nth-child(2){border-top-color:#39a980}
+#councilMemberDashboard .council-stats article:nth-child(3){border-top-color:#e49a61}
+#councilMemberDashboard .council-stats article:nth-child(4){border-top-color:#a88cdb}
+#councilMemberDashboard .council-stats strong{font-size:26px;margin-top:6px}
+#councilMemberDashboard .council-list-caption{font-size:12px;margin:18px 0 10px}
+#councilMemberDashboard .council-address-list{display:grid;gap:10px}
+#councilMemberDashboard .council-address-button{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:10px 12px;align-items:center;width:100%;padding:17px;text-align:left;border:1px solid var(--council-line);border-radius:16px;background:var(--council-surface);color:var(--council-ink);font:inherit;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s}
+#councilMemberDashboard .council-address-button:hover{border-color:#7c9dc9;box-shadow:0 4px 18px #23477112;transform:translateY(-1px)}
+#councilMemberDashboard .council-address-button:focus-visible{outline:3px solid #79bafb;outline-offset:2px}
+#councilMemberDashboard .council-address-icon{display:grid;place-items:center;width:40px;height:40px;background:var(--council-control);border-radius:12px;color:#5684b9;font-size:28px}
+#councilMemberDashboard .council-address-info{min-width:0;display:grid;gap:5px}
+#councilMemberDashboard .council-address-info strong{font-size:17px;overflow-wrap:anywhere}
+#councilMemberDashboard .council-address-info small{color:var(--council-muted);font-size:12px}
+#councilMemberDashboard .council-address-arrow{grid-column:3;grid-row:1/3;color:var(--council-muted);font-size:27px}
+#councilMemberDashboard .council-address-counts{grid-column:2;display:flex;flex-wrap:wrap;gap:6px}
+#councilMemberDashboard .result-pill{background:var(--council-control);color:var(--council-muted);font-size:11px;padding:6px 9px}
+#councilMemberDashboard .result-pill.collected{background:#e2f4eb;color:#1a704e}
+#councilMemberDashboard .result-pill.not_collected{background:#fff0e7;color:#ab4824}
+#councilMemberDashboard :is(.council-address-back,.small-btn){background:var(--council-control);color:var(--council-ink);border:1px solid var(--council-line);border-radius:10px;padding:10px 14px;min-height:44px;font:inherit;font-size:13px;cursor:pointer}
+#councilMemberDashboard .council-address-heading{margin:16px 0}
+#councilMemberDashboard .council-address-heading h2{font-size:26px;margin:16px 0 4px;overflow-wrap:anywhere}
+#councilMemberDashboard .council-record{background:var(--council-surface);border-color:var(--council-line);padding:18px;overflow-wrap:anywhere}
+#councilMemberDashboard .council-record-head{align-items:flex-start;flex-wrap:wrap;margin-bottom:12px}
+#councilMemberDashboard .council-record p{margin:5px 0;color:var(--council-ink)}
+#councilMemberDashboard .council-record p.council-muted{color:var(--council-muted)}
+#councilMemberDashboard .council-record :is(summary,.collection-reason){color:#765022;background:#fff3df}
+#councilMemberDashboard .council-record summary{background:var(--council-control);color:var(--council-ink);padding:13px;border-radius:10px;margin-top:10px;min-height:44px}
+#councilMemberDashboard .collection-reason{padding:12px;border-radius:10px}
+#councilMemberDashboard .collection-reason.dv-text{font-size:18px;line-height:1.9}
+#councilMemberDashboard .council-history-item{border-color:var(--council-line)}
+#councilMemberDashboard .collection-empty{background:var(--council-control);color:var(--council-muted)}
+:root[data-theme=dark] #councilMemberDashboard.council-portal{--council-bg:#090f18;--council-surface:#142031;--council-ink:#e6edf7;--council-muted:#a7b7cd;--council-line:#2a3b51;--council-control:#1d2e44}
+:root[data-theme=dark] #appContainer #councilMemberDashboard :is(h1,h2,h3,strong){color:var(--council-ink)}
+:root[data-theme=dark] #councilMemberDashboard .result-pill.collected{background:#153d32;color:#8de2bd}
+:root[data-theme=dark] #councilMemberDashboard .result-pill.not_collected{background:#452a22;color:#ffbe9d}
+:root[data-theme=dark] #councilMemberDashboard .council-record .collection-reason{background:#3b3020;color:#f3ce98!important}
+:root[data-theme=dark] #councilMemberDashboard .council-assigned-issue{background:#352d20;color:#f3ce98}
+@media(max-width:600px){#councilMemberDashboard .council-filters{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#councilMemberDashboard .council-stats{grid-template-columns:repeat(2,minmax(0,1fr))}#councilMemberDashboard .council-record-grid{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){#councilMemberDashboard .council-address-button{transition:none;transform:none}}
 
 </style></head>
 <body>
@@ -1239,7 +1296,7 @@ html[data-theme=dark] .invoice-share-button{background:#1b2c44;color:#b4cceb}htm
 
 
         <!-- REGISTER -->
-        <div id="staffLoginScreen" class="screen auth-screen"><header class="page-head"><button class="back-control" onclick="showScreen('loginScreen')" aria-label="Back">?</button><h1>Duty Supervisor sign in</h1></header><p class="pdf-note">Only duty supervisors can sign in. Use the supervisor login created by Feeali Council.</p><form onsubmit="event.preventDefault();staffSignIn()"><div class="input-group"><label for="staffLoginEmail">Email</label><input id="staffLoginEmail" type="email" autocomplete="username" required></div><div class="input-group"><label for="staffLoginPassword">Password</label><input id="staffLoginPassword" type="password" autocomplete="current-password" required></div><button id="staffSignInButton" class="btn">Sign in</button><p id="staffLoginMessage" class="pdf-note" aria-live="polite"></p></form></div>
+        <div id="staffLoginScreen" class="screen auth-screen"><header class="page-head"><button class="back-control" onclick="showScreen('loginScreen')" aria-label="Back">?</button><h1>Staff / Council sign in</h1></header><p class="pdf-note">Duty supervisors and council post members can sign in using the email and password created by Feeali Council.</p><form onsubmit="event.preventDefault();staffSignIn()"><div class="input-group"><label for="staffLoginEmail">Email</label><input id="staffLoginEmail" type="email" autocomplete="username" required></div><div class="input-group"><label for="staffLoginPassword">Password</label><input id="staffLoginPassword" type="password" autocomplete="current-password" required></div><button id="staffSignInButton" class="btn">Sign in</button><p id="staffLoginMessage" class="pdf-note" aria-live="polite"></p></form></div>
 <div id="staffWorkspace" class="screen"><header class="welcome-head"><div><h1>Collection Duty</h1><p id="staffWelcomeName"></p></div><button class="text-link" onclick="signOut()">Sign out</button></header><div id="staffIdentity"></div><p id="staffWorkspaceMessage" class="pdf-note" aria-live="polite"></p><div id="staffDutyContent"></div></div>
 <div id="registerScreen" class="screen auth-screen"><div class="feeali-logo" aria-label="Feeali Waste Management"><svg viewBox="0 0 180 75" aria-hidden="true"><path d="M25 52C15 18 69 8 93 12 85 46 61 65 25 52Z" fill="#3c9e73"/><path d="M29 53 80 24" stroke="white" stroke-width="3"/><path d="M82 49C100 14 146 27 161 44 138 65 103 74 82 49Z" fill="#315da3"/><path d="m87 50 57-5" stroke="white" stroke-width="3"/></svg><strong>FEEALI</strong><span>WASTE MANAGEMENT</span></div><h1 class="auth-title">Sign Up</h1><p class="auth-subtitle">Already have an account? <button class="text-link" onclick="showScreen('loginScreen')">Sign in!</button></p>
 <form onsubmit="event.preventDefault();register()"><div class="input-group"><label for="regName">Full name</label><input id="regName" autocomplete="name" required></div><div class="input-group"><label for="regEmail">Email</label><input id="regEmail" type="email" autocomplete="email"></div><div class="input-group"><label for="regAddress">Collection address</label><input id="regAddress" autocomplete="street-address" required></div><div class="input-group"><label for="regContact">Mobile number</label><input id="regContact" type="tel" autocomplete="tel" required></div><div class="input-group"><label for="regPassword">Password</label><input id="regPassword" type="password" minlength="6" autocomplete="new-password" required></div><button class="btn auth-submit" id="signUpButton" disabled>Sign up</button></form></div>
@@ -1611,9 +1668,14 @@ function createWorkforceApi(sdk) {
     }
     async function loginStaff(email, password) {
         await signInWithEmailAndPassword(auth, String(email).trim(), password);
-        const profile = await getStaffProfile();
-        if (!profile?.active || profile.role !== 'supervisor') { await firebaseSignOut(auth); throw new Error('Only active duty supervisors have login access. Contact the council.'); }
-        return profile;
+        try {
+            const profile = await getStaffProfile();
+            if (profile?.active && profile.role === 'supervisor') return profile;
+            const member = await getCouncilMemberProfile();
+            const post = member?.active && member.postId ? await read('councilPosts/'+key(member.postId)) : null;
+            if (member?.active && post?.active) return {...member,role:'council'};
+            throw new Error('Your supervisor or council post access is inactive. Contact the council.');
+        } catch(error) { await firebaseSignOut(auth);throw error; }
     }
     async function adminSaveStaff(data) {
         await requireAdmin();
@@ -2121,6 +2183,17 @@ function observeAuth(callback) {
             const staff = await get(dbRef(database, `staffProfiles/${user.uid}`));
             if (staff.val()?.role && (staff.val().role !== 'supervisor' || !staff.val().active)) throw new Error('Only active duty supervisors have login access.');
             if (!staff.val()?.role) {
+                const member = (await get(dbRef(database, `councilMembers/${user.uid}`))).val();
+                if (member) {
+                    const post = (await get(dbRef(database, `councilPosts/${member.postId}`))).val();
+                    if (!member.active || !post?.active) throw new Error('Council post access is inactive.');
+                    if(token!==revision)return;
+                    const revoke=()=>{if(auth.currentUser?.uid===user.uid)firebaseSignOut(auth).catch(console.error);};
+                    const stops=[onValue(dbRef(database, `councilMembers/${user.uid}`), snapshot=>{const value=snapshot.val();if(!value?.active||value.postId!==member.postId)revoke();}),onValue(dbRef(database, `councilPosts/${member.postId}`), snapshot=>{if(!snapshot.val()?.active)revoke();})];
+                    stopApproval=()=>stops.forEach(stop=>stop());
+                    if(auth.currentUser?.uid===user.uid)callback(user,{role:'council'});
+                    return;
+                }
                 await requireApprovedCustomer(user);
                 if(token!==revision)return;
                 stopApproval = onValue(dbRef(database, `users/${user.uid}/accountApproval`), snapshot => {
@@ -3163,7 +3236,8 @@ onAuthStateChanged(auth, user => { if (user) loadSavedFont().catch(console.error
     document.querySelectorAll('input[name="pdfServiceCategory"]').forEach(radio => radio.addEventListener('change', updateServiceConditionalFields));
     updateServiceConditionalFields();
     toggleBillingFields();
-    getFeealiBackend().then(backend => backend.observeAuth(user => {
+    getFeealiBackend().then(backend => backend.observeAuth((user,access) => {
+        if(access?.role==='council')return;
         if (user) {
             startApplicationSubscription().catch(console.error);
             if (!adsUnsubscribe) adsUnsubscribe = backend.subscribeAdvertisements(renderBackendAds, console.error);
@@ -3619,6 +3693,68 @@ async function confirmAddAccount() {
 
 </script>
 <script>
+(() => {
+    const frontend=document.body?.dataset.appRole!=='admin';
+    const root=document.createElement('section');root.id='councilMemberDashboard';root.className=frontend?'screen council-portal':'hidden council-portal';(frontend?document.querySelector('.app-container'):document.body).append(root);
+    let api,profile,posts={},events={},properties={},stops=[],generation=0,day=new Date(Date.now()+5*3600000).toISOString().slice(0,10),address='',status='all',onlyMine=false,selectedAddress='';
+    const node=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
+    const localDay=time=>new Date(Number(time)+5*3600000).toISOString().slice(0,10);
+    function stop(){generation++;stops.forEach(fn=>fn());stops=[];events={};properties={};profile=null;selectedAddress='';root.replaceChildren();root.classList.add('hidden');if(frontend){root.classList.remove('active');if(document.getElementById('mainNavigation'))document.getElementById('mainNavigation').hidden=true;}}
+    function render(){if(!profile)return;root.replaceChildren();const header=node('header','council-portal-header'),identity=node('div');identity.append(node('span','council-eyebrow','FEEALI COUNCIL'),node('h1','',profile.name),node('p','',posts[profile.postId]?.name||'Council member'));const logout=node('button','small-btn','Sign out');logout.onclick=()=>api.signOutUser();header.append(identity,logout);root.append(header);
+        const body=node('main','council-portal-body');body.append(node('h2','','Daily collection overview'),node('p','council-muted','Select an address to review accounts, collection results and photo proof. Dates use Maldives time.'));
+        const filters=node('div','council-filters'),date=node('input'),search=node('input'),select=node('select'),mine=node('input');date.type='date';date.value=day;date.setAttribute('aria-label','Collection date');date.onchange=()=>{if(date.value){day=date.value;render();}};search.type='search';search.value=address;search.placeholder='Search any address, account, floor or name';search.setAttribute('aria-label','Search collection addresses');search.oninput=()=>{address=search.value;renderRecords();};[['all','All results'],['collected','Collected'],['not_collected','Not collected'],['unrecorded','No result yet']].forEach(([v,t])=>select.append(new Option(t,v)));select.value=status;select.onchange=()=>{status=select.value;renderRecords();};mine.type='checkbox';mine.checked=onlyMine;mine.onchange=()=>{onlyMine=mine.checked;renderRecords();};const label=node('label','council-mine');label.append(mine,document.createTextNode('Issues sent to me'));filters.append(date,search,select,label);body.append(filters);const results=node('div');results.id='councilCollectionResults';body.append(results);root.append(body);renderRecords();}
+
+    const addressName=r=>String(r.address||r.propertyName||'Unnamed address').trim();
+    const addressKey=r=>addressName(r).toLocaleLowerCase();
+    function recordCard(r,allEvents){const card=node('article','council-record'),head=node('div','council-record-head');head.append(node('h3','',r.propertyName||r.applicantName||'Account'),node('span','result-pill '+r.status,r.status==='collected'?'Collected':r.status==='not_collected'?'Not collected':'No result yet'));card.append(head,node('p','',[r.propertyName,r.floor,r.registrationNumber].filter(Boolean).join(' · ')),node('p','council-muted',[r.applicantName,r.contact].filter(Boolean).join(' · ')));if(r.recordedAt)card.append(node('p','council-muted',new Date(r.recordedAt).toLocaleString([],{timeZone:'Indian/Maldives',dateStyle:'medium',timeStyle:'short'})+' MVT'));
+            if(r.reason)card.append(node('p','collection-reason',r.reason));if(r.reasonDv){const dv=node('p','collection-reason dv-text',r.reasonDv);dv.dir='rtl';card.append(dv);}if(r.notes)card.append(node('p','',r.notes));if(r.supervisorName)card.append(node('p','council-muted','Supervisor: '+r.supervisorName));if(r.staff)card.append(node('p','council-muted','Team: '+Object.values(r.staff).map(p=>p.name).join(', ')));
+            if(r.informedMembers?.[api.auth.currentUser?.uid])card.append(node('p','council-assigned-issue','This issue was sent to you.'));if(r.proofDataUrl&&/^data:image\/(jpeg|png|webp);base64,/.test(r.proofDataUrl)){const details=node('details');details.append(node('summary','','View image proof'));const image=node('img','collection-proof-image');image.src=r.proofDataUrl;image.alt='Collection issue photo';image.loading='lazy';details.append(image);card.append(details);}const history=node('details','council-address-history');history.append(node('summary','','Account collection history'));const records=allEvents.filter(e=>e.uid===r.uid&&e.formId===r.formId).sort((a,b)=>b.recordedAt-a.recordedAt);records.forEach(e=>{const item=node('div','council-history-item');item.append(node('strong','',e.status==='collected'?'Collected':'Not collected'),node('p','council-muted',new Date(e.recordedAt).toLocaleString([],{timeZone:'Indian/Maldives'})),node('p','',[e.reason,e.notes].filter(Boolean).join(' · ')));if(e.proofDataUrl&&/^data:image\/(jpeg|png|webp);base64,/.test(e.proofDataUrl)){const image=node('img','collection-proof-image');image.src=e.proofDataUrl;image.alt='Collection proof';image.loading='lazy';item.append(image);}history.append(item);});if(!records.length)history.append(node('p','council-muted','No collection history yet.'));card.append(history);return card;}
+    function renderRecords(){
+        const container=document.getElementById('councilCollectionResults');if(!container||!profile)return;
+        container.replaceChildren();
+        const allEvents=Object.values(events).flatMap(forms=>Object.values(forms||{}).flatMap(records=>Object.values(records||{})));
+        const daily=allEvents.filter(r=>Number.isFinite(Number(r.recordedAt))&&localDay(r.recordedAt)===day).sort((a,b)=>b.recordedAt-a.recordedAt);
+        const indexed=new Map(Object.values(properties).flatMap(zone=>Object.entries(zone||{})).map(([key,p])=>[key,p]));
+        daily.forEach(r=>{if(!indexed.has(r.propertyKey))indexed.set(r.propertyKey,r);});
+        // Include registered accounts with no visit on the chosen day.
+        const rows=[...indexed].map(([key,p])=>{
+            const latest=daily.find(r=>r.propertyKey===key);
+            return latest?{...p,...latest,address:p.address||latest.address}:{...p,status:'unrecorded'};
+        });
+        const words=address.trim().toLowerCase().split(/\s+/).filter(Boolean);
+        const matches=r=>(status==='all'||r.status===status)&&(!onlyMine||r.informedMembers?.[api.auth.currentUser?.uid])&&words.every(word=>[r.address,r.propertyName,r.applicantName,r.contact,r.floor,r.registrationNumber].join(' ').toLowerCase().includes(word));
+        const groups=new Map();rows.filter(matches).forEach(r=>{const key=addressKey(r);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r);});
+        if(selectedAddress&&!groups.has(selectedAddress))selectedAddress='';
+        if(selectedAddress){
+            const accounts=rows.filter(r=>addressKey(r)===selectedAddress);
+            const back=node('button','council-address-back','← All addresses');back.type='button';back.onclick=()=>{selectedAddress='';renderRecords();};
+            const heading=node('div','council-address-heading');heading.append(back,node('h2','',addressName(accounts[0])),node('p','council-muted',accounts.length+' registered account'+(accounts.length===1?'':'s')+' · '+day));container.append(heading);
+            const list=node('div','council-record-grid');accounts.sort((a,b)=>String(a.floor||'').localeCompare(String(b.floor||''),undefined,{numeric:true})).forEach(r=>list.append(recordCard(r,allEvents)));container.append(list);return;
+        }
+        const summary=node('div','council-stats');
+        [['Registered accounts',indexed.size],['Collected',rows.filter(r=>r.status==='collected').length],['Not collected',rows.filter(r=>r.status==='not_collected').length],['Sent to me',rows.filter(r=>r.informedMembers?.[api.auth.currentUser?.uid]).length]].forEach(([label,value])=>{const tile=node('article');tile.append(node('span','',label),node('strong','',value));summary.append(tile);});container.append(summary);
+        container.append(node('p','council-list-caption',groups.size+' address'+(groups.size===1?'':'es')+' · Tap to view details'));
+        const list=node('div','council-address-list');
+        [...groups].sort((a,b)=>addressName(a[1][0]).localeCompare(addressName(b[1][0]))).forEach(([key,accounts])=>{
+            const button=node('button','council-address-button');button.type='button';button.setAttribute('aria-label','View details for '+addressName(accounts[0]));
+            const icon=node('span','council-address-icon','⌂');icon.setAttribute('aria-hidden','true');
+            const info=node('span','council-address-info');info.append(node('strong','',addressName(accounts[0])),node('small','',accounts.length+' matching account'+(accounts.length===1?'':'s')));
+            const counts=node('span','council-address-counts');const collected=accounts.filter(r=>r.status==='collected').length,missed=accounts.filter(r=>r.status==='not_collected').length,waiting=accounts.filter(r=>r.status==='unrecorded').length;
+            if(collected)counts.append(node('span','result-pill collected',collected+' collected'));
+            if(missed)counts.append(node('span','result-pill not_collected',missed+' not collected'));
+            if(waiting)counts.append(node('span','result-pill',waiting+' awaiting result'));
+            const arrow=node('span','council-address-arrow','›');arrow.setAttribute('aria-hidden','true');button.append(icon,info,counts,arrow);
+            button.onclick=()=>{selectedAddress=key;renderRecords();};list.append(button);
+        });container.append(list);
+        if(!groups.size)container.append(node('p','collection-empty','No addresses match these filters. Choose another day, address or result.'));
+    }
+    async function open(backend){stop();api=backend;const revision=generation;profile=await api.getCouncilMemberProfile();if(revision!==generation)return;if(!profile?.active)throw new Error('Council member access is inactive.');document.getElementById('adminLogin')?.classList.add('hidden');document.getElementById('adminDashboard')?.classList.add('hidden');root.classList.remove('hidden');if(frontend){showScreen(root.id);document.getElementById('mainNavigation').hidden=true;}const fail=error=>{const msg=node('p','council-error',error.message||'Collection data could not be loaded.');root.append(msg);};
+        stops.push(api.subscribeCouncilPosts(value=>{if(revision!==generation)return;posts=value;if(!posts[profile.postId]?.active){api.signOutUser();return;}render();},fail),api.subscribeCouncilProfile(value=>{if(revision!==generation)return;if(!value?.active){api.signOutUser();return;}profile=value;render();},fail),api.subscribeCouncilCollections(value=>{if(revision!==generation)return;events=value;renderRecords();},fail),api.subscribeCouncilProperties(value=>{if(revision!==generation)return;properties=value;renderRecords();},fail));render();}
+    window.CouncilPortal={open,close:()=>{const wasOpen=root.classList.contains('active');stop();if(frontend&&wasOpen)showScreen('loginScreen');}};if(!frontend)getBackend().then(backend=>backend.observeAuth(async user=>{if(!user){stop();document.getElementById('adminLogin').classList.remove('hidden');document.getElementById('adminDashboard').classList.add('hidden');return;}if(user.email?.toLowerCase()==='admin@feeali.app'){stop();return;}try{await open(backend);}catch(error){stop();document.getElementById('loginMessage').textContent=error.message;await backend.signOutUser();}}));
+})();
+
+</script>
+<script>
 async function readCollectionProof(file){
     if(!file||!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>10*1024*1024)throw new Error('Choose a JPEG, PNG or WebP photo up to 10 MB.');
     const source=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(new Error('Photo could not be read.'));reader.readAsDataURL(file);});
@@ -3720,7 +3856,7 @@ function renderEntityCollectionChart(container,records,range,entityRecords=recor
 }
 async function staffSignIn() {
     const button=document.getElementById('staffSignInButton'), message=document.getElementById('staffLoginMessage');button.disabled=true;message.textContent='';
-    try{const api=await getFeealiBackend();await api.loginStaff(document.getElementById('staffLoginEmail').value,document.getElementById('staffLoginPassword').value);document.getElementById('staffLoginPassword').value='';showScreen('staffWorkspace');}
+    try{const api=await getFeealiBackend();const profile=await api.loginStaff(document.getElementById('staffLoginEmail').value,document.getElementById('staffLoginPassword').value);document.getElementById('staffLoginPassword').value='';if(profile.role!=='council')showScreen('staffWorkspace');}
     catch(error){message.textContent=error.message||'Staff sign-in failed';}finally{button.disabled=false;}
 }
 function activeSupervisorDuty() { const id=dutyState.activeDutyId;return id&&dutyState.sessions?.[id]?.status==='active'?{dutyId:id,...dutyState.sessions[id]}:null; }
@@ -3863,9 +3999,10 @@ async function attachSupervisorDuty(api) {
 // Customer and staff share index.html, but their workspaces and database permissions differ.
 const collectionOriginalShowScreen=showScreen;
 showScreen=function(screenId){if(staffProfile && !['staffWorkspace','staffLoginScreen','loginScreen'].includes(screenId))screenId='staffWorkspace';return collectionOriginalShowScreen(screenId);};
-const staffEntry=wfElement('button','staff-entry-link','Duty Supervisor sign in');staffEntry.type='button';staffEntry.onclick=()=>showScreen('staffLoginScreen');document.getElementById('loginScreen').append(staffEntry);
-async function connectCollectionUser(api,user){
-    cleanupWorkforce();if(!user)return;const uid=user.uid;
+const staffEntry=wfElement('button','staff-entry-link','Staff / Council member sign in');staffEntry.type='button';staffEntry.onclick=()=>showScreen('staffLoginScreen');document.getElementById('loginScreen').append(staffEntry);
+async function connectCollectionUser(api,user,access){
+    cleanupWorkforce();if(!user){window.CouncilPortal?.close();return;}const uid=user.uid;
+    if(access?.role==='council'){themePreview=false;await window.CouncilPortal.open(api);return;}
     try{
         const profile=api.getStaffProfile?await api.getStaffProfile():null;if(api.auth.currentUser?.uid!==uid)return;
         if(!profile?.role){workforceSubscriptions.push(api.subscribeAddresses(renderCustomerAddressDirectory,error=>console.error(error)));if(api.subscribeCustomerCollections)workforceSubscriptions.push(api.subscribeCustomerCollections(records=>{customerCollectionRecords=records;renderCustomerCollections();},error=>{customerCollectionRecords={};renderCustomerCollections();document.getElementById('customerCollectionFeed').append(wfElement('p','pdf-note',error.message||'Collection updates could not be loaded.'));}));return;}
@@ -3882,7 +4019,7 @@ async function connectCollectionUser(api,user){
         }
     }catch(error){if(api.auth.currentUser?.uid===uid)wfMessage(error.message,true);}
 }
-getFeealiBackend().then(api=>api.observeAuth(user=>connectCollectionUser(api,user))).catch(console.error);
+getFeealiBackend().then(api=>api.observeAuth((user,access)=>connectCollectionUser(api,user,access).catch(console.error))).catch(console.error);
 
 </script>
 <script>
