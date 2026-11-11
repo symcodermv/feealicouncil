@@ -1191,6 +1191,16 @@ html[data-theme=dark] #staffWorkspace{--supervisor-bg:#080e17;--supervisor-card:
 
 .council-history-item{border-top:1px solid #e1e8f2;padding:13px 0}.council-history-item>strong{font-size:13px}.council-address-history{margin-top:12px}.collection-proof-image{max-height:360px}.council-portal .hidden{display:none!important}
 
+</style><style>
+.invoice-save-actions{display:flex;gap:10px;margin:18px 0 24px;flex-wrap:wrap}.invoice-save-button,.invoice-share-button{display:flex;justify-content:center;align-items:center;flex:1;min-height:50px;padding:14px;border-radius:13px;border:0;font:inherit;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer}.invoice-save-button{background:#345c9f;color:#fff}.invoice-save-button[aria-disabled=true]{background:#e8edf5;color:#8b9bb2;cursor:wait}.invoice-share-button{background:#edf2fa;color:#345c9f}.invoice-save-button:focus-visible,.invoice-share-button:focus-visible{outline:3px solid #79bafb;outline-offset:3px}
+/* Use the same compact drawer for customers and supervisors. */
+#sidebarOverlay .side-menu{padding:18px 18px 16px;transition:transform .28s cubic-bezier(.22,.8,.25,1);scrollbar-width:none}#serviceMenu .side-menu-head{margin-bottom:12px}#serviceMenu .menu-brand-wordmark{font-size:10px;margin-bottom:7px}#serviceMenu .menu-account-orb{display:none}#serviceMenu .menu-brand h2{font-size:23px;line-height:1.25;margin-bottom:5px}#serviceMenu .menu-brand p{font-size:11px;line-height:1.4}#serviceMenu .side-close{top:0;right:0;width:34px;height:34px;font-size:21px}#serviceMenu .menu-section-label{font-size:9px;margin-bottom:7px}#serviceMenu .service-menu-actions{margin-bottom:12px}#serviceMenu .quick-actions{margin:0;padding:3px 12px;border-radius:17px}#serviceMenu .quick-actions button,#serviceMenu .quick-actions #myApplicationAction{min-height:45px;padding:8px 0;font-size:12px;line-height:1.35;gap:10px}#serviceMenu .quick-actions .action-icon{width:26px;height:26px;flex-basis:26px}#serviceMenu .quick-actions .action-icon svg{width:19px;height:19px}#serviceMenu .supervisor-shared-profile{padding:0 4px 8px;margin:0 0 10px}#serviceMenu .supervisor-shared-profile .person-row{margin:0}#serviceMenu .supervisor-shared-profile .person-avatar{width:32px;height:32px;font-size:13px}#serviceMenu .supervisor-shared-profile strong{font-size:12px}#serviceMenu .supervisor-shared-profile small{font-size:10px}#serviceMenu .appearance-setting{margin:0 0 10px;padding:0}#serviceMenu .appearance-label{font-size:9px;margin-bottom:6px}#serviceMenu .appearance-options{padding:3px;border-radius:12px}#serviceMenu .appearance-options button{min-height:33px;padding:7px 4px;font-size:11px;border-radius:9px}#serviceMenu .menu-language-picker{margin:0 0 10px}#serviceMenu .menu-language-picker>p{font-size:10px;margin-bottom:6px}#serviceMenu .menu-language-buttons{padding:3px;border-radius:12px}#serviceMenu .menu-language-buttons button{min-height:34px;font-size:12px}#serviceMenu .side-signout{min-height:42px;padding:9px 12px;font-size:12px;margin-top:auto}#serviceMenu.i18n-dv .menu-brand h2{font-size:24px;line-height:1.5}#serviceMenu.i18n-dv .quick-actions button{font-size:15px;line-height:1.6}#serviceMenu.i18n-dv .side-close{left:0;right:auto}#serviceMenu .supervisor-shared-nav .quick-actions{margin-bottom:0}
+@media(min-height:600px){#sidebarOverlay .side-menu{overflow-y:auto}}
+@media(max-height:599px){#sidebarOverlay .side-menu{padding:12px 14px}#serviceMenu .menu-brand p{display:none}#serviceMenu .menu-brand h2{font-size:20px}#serviceMenu .quick-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px;padding:4px 10px}#serviceMenu .quick-actions button,#serviceMenu .quick-actions #myApplicationAction{min-height:39px;font-size:11px;padding:6px 0}#serviceMenu .supervisor-shared-nav .quick-actions button:last-child{grid-column:1/-1}#serviceMenu .service-menu-actions{margin-bottom:8px}#serviceMenu .side-menu-head{margin-bottom:9px}#serviceMenu .supervisor-shared-profile{margin-bottom:7px}#serviceMenu .appearance-options button{min-height:29px}#serviceMenu .menu-language-buttons button{min-height:29px}#serviceMenu .appearance-setting,#serviceMenu .menu-language-picker{margin-bottom:8px}}
+@media(prefers-reduced-motion:reduce){#sidebarOverlay .side-menu{transition:none}}
+html[data-theme=dark] .invoice-share-button{background:#1b2c44;color:#b4cceb}html[data-theme=dark] .invoice-save-button[aria-disabled=true]{background:#1d2c42;color:#8a9eb9}
+@media(min-height:600px) and (max-height:740px){#sidebarOverlay .side-menu{padding:14px 16px}#serviceMenu .menu-brand p{display:none}#serviceMenu .side-menu-head{margin-bottom:9px}#serviceMenu .quick-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px}#serviceMenu .quick-actions button,#serviceMenu .quick-actions #myApplicationAction{min-height:42px;font-size:11px;padding:6px 0}#serviceMenu .supervisor-shared-nav .quick-actions button:last-child{grid-column:1/-1}#serviceMenu.i18n-dv .quick-actions button{font-size:13px;line-height:1.4}#serviceMenu .appearance-options button,#serviceMenu .menu-language-buttons button{min-height:30px}#serviceMenu .menu-brand h2{font-size:21px}#serviceMenu .menu-language-picker,#serviceMenu .appearance-setting{margin-bottom:8px}}
+
 </style></head>
 <body>
 
@@ -1225,7 +1235,7 @@ html[data-theme=dark] #staffWorkspace{--supervisor-bg:#080e17;--supervisor-card:
 <h1 class="auth-title">Welcome to Feeali.</h1><p class="auth-welcome-copy">Your collection, bills and applications.<br>All together, in one simple place.</p><p id="accountReviewNotice" class="account-review-notice" role="status" hidden>Your account has been created and is awaiting Feeali Council approval. You can sign in and submit your form after approval.</p><p class="auth-subtitle">Sign in to your account to get started.</p>
 <form onsubmit="event.preventDefault();login()"><div class="input-group"><label for="loginContact">Mobile number</label><input type="tel" id="loginContact" autocomplete="tel" required></div><div class="input-group"><label for="loginPassword">Password</label><div class="login-password-field"><input type="password" id="loginPassword" autocomplete="current-password" required><button id="toggleLoginPassword" class="password-visibility-button" type="button" aria-controls="loginPassword" aria-label="Show password" aria-pressed="false">Show</button></div></div>
 <button type="button" class="forgot-link" onclick="showScreen('resetScreen')">Forgot password?</button><button class="btn auth-submit" id="signInButton" disabled>Sign in</button></form>
-<p class="auth-create-account">New to Feeali? <button class="text-link" type="button" onclick="showScreen('registerScreen')">Create an account</button></p><div class="or-divider"><span>WASTE SERVICES</span></div><button class="outline-btn" onclick="openWasteRegistration()">Register Waste Management</button><button class="text-link preview-link" onclick="showScreen('applicationProcess')">How registration works <span aria-hidden="true">↗</span></button></div></div>
+<p class="auth-create-account">New to Feeali? <button class="text-link" type="button" onclick="showScreen('registerScreen')">Create an account</button></p><button class="text-link preview-link" onclick="showScreen('applicationProcess')">How registration works <span aria-hidden="true">↗</span></button></div></div>
 
 
         <!-- REGISTER -->
@@ -1489,7 +1499,7 @@ html[data-theme=dark] #staffWorkspace{--supervisor-bg:#080e17;--supervisor-card:
                 <section class="invoice-total-card"><span class="billing-eyebrow">WASTE MANAGEMENT</span><span id="fullInvoiceStatus" class="full-invoice-status">Unpaid</span><p id="fullInvoicePeriod"></p><h3 id="fullInvoiceTotal"></h3><span id="fullInvoiceNumber"></span></section>
                 <section class="invoice-recipient"><span class="billing-eyebrow">BILLED TO</span><h3 id="fullInvoiceProperty"></h3><p id="fullInvoiceAddress"></p><p id="fullInvoiceIssued"></p><p id="fullInvoiceDue"></p></section>
                 <h3 class="invoice-section-title">Payment details</h3><div class="bank-card glass" id="invoiceBankDetails"></div>
-                <div id="invoiceAttachment"></div><a id="invoiceFileLink" class="invoice-document-link" target="_blank" rel="noopener">Open original invoice ↗</a>
+                <div class="invoice-save-actions"><a id="downloadInvoicePdf" class="invoice-save-button" aria-disabled="true">Download / Save PDF</a><button id="shareInvoicePdf" class="invoice-share-button" type="button" hidden>Save / Share</button></div><div id="invoiceAttachment"></div><a id="invoiceFileLink" class="invoice-document-link" target="_blank" rel="noopener">Open original invoice ↗</a>
                 <section id="invoicePaymentSection" class="invoice-payment-section"><h3 class="invoice-section-title">Submit payment proof</h3><p>Transfer the amount using the details above, then upload your payment slip for council review.</p><div class="input-group"><label for="customerSlipFile">Payment slip · PDF or image</label><input id="customerSlipFile" type="file" accept="application/pdf,image/*"></div><button class="btn" id="submitSlipButton" onclick="submitCurrentPaymentSlip()">Submit Slip for Review</button></section>
                 <p id="invoicePaymentMessage" class="pdf-note" aria-live="polite"></p>
             </div>
@@ -1901,7 +1911,10 @@ function createEntityBillingApi({database,dbRef,get,push,update,runTransaction,s
         const amount=Number(values.amount);if(!Number.isFinite(amount)||amount<=0)throw new Error('Enter a valid invoice amount');
         if(values.dueDate && !/^\d{4}-\d{2}-\d{2}$/.test(values.dueDate))throw new Error('Select a valid due date');
         const ref=dbRef(database,`users/${uid}/wasteForms/${formId}`);
-        await get(ref);
+        const before=(await get(ref)).val();
+        if(!before||before.applicationProgress!=='completed'||!before.registrationNumber)throw new Error('Register this entity before sending monthly bills');
+        if(before.invoices?.[month]||(before.invoice&&monthOf(before.invoice)===month))throw new Error('An invoice already exists for this entity and month. Open it in sent bills.');
+        const numbering=await allocateInvoiceNumber();
         const historyKey=push(dbRef(database,`users/${uid}/wasteForms/${formId}/paymentHistory`)).key;
         const noticeKey=push(dbRef(database,`users/${uid}/wasteForms/${formId}/notifications`)).key;
         const invoice={invoiceKey:month,billingMonth:month,number:values.number || `WM-${month}-${formId.slice(-6)}`,amount,dueDate:values.dueDate||'',bankName:values.bankName||'Bank of Maldives',accountName:values.accountName||'Feeali Council',accountNumber:values.accountNumber||'7730000044669',fileName:values.fileName||'',fileDataUrl:values.fileDataUrl||'',status:'ready',paymentStatus:'unpaid',issuedAt:serverTimestamp()};
@@ -1909,7 +1922,7 @@ function createEntityBillingApi({database,dbRef,get,push,update,runTransaction,s
         const result=await runTransaction(ref,form=>{
             if(!form)return null;
             if(form.applicationProgress!=='completed'||!form.registrationNumber){reason='Register this entity before sending monthly bills';return;}
-            invoice.number=values.number || `WM-${month}-${form.registrationNumber}`;
+            invoice.number=numbering;
             const invoices={...(form.invoices||{})};
             if(form.invoice){const previous=key(form.invoice.invoiceKey || monthOf(form.invoice));if(!invoices[previous])invoices[previous]={...form.invoice,invoiceKey:previous,...(!form.invoice.invoiceKey?{legacyPayment:true}:{})};}
             if(invoices[month]){reason='An invoice already exists for this entity and month. Open it in sent bills.';return;}
@@ -1952,7 +1965,20 @@ function createEntityBillingApi({database,dbRef,get,push,update,runTransaction,s
         changes[`users/${uid}/wasteForms/${formId}/paymentHistory/${history}`]={type:'payment_review',invoiceKey:selected,status:decision,createdAt:serverTimestamp()};
         await update(dbRef(database),changes);
     }
-    return{adminSetInvoice,submitPaymentSlip,getUserPaymentSubmission,adminReviewPayment};
+    const numberingDefaults={prefix:'FWM-',nextNumber:1,padding:6};
+    async function adminGetInvoiceNumbering(){await requireAdmin();return {...numberingDefaults,...(await read('settings/invoiceNumbering')||{})};}
+    async function adminSaveInvoiceNumbering(values){
+        await requireAdmin();const prefix=String(values.prefix??'FWM-').trim(),nextNumber=Number(values.nextNumber),padding=Number(values.padding);
+        if(!/^[A-Za-z0-9\/-]{0,20}$/.test(prefix)||!Number.isSafeInteger(nextNumber)||nextNumber<1||nextNumber>999999999||!Number.isInteger(padding)||padding<1||padding>10)throw new Error('Enter a prefix, starting number (1–999999999) and digit length (1–10).');
+        await get(dbRef(database,'settings/invoiceNumbering'));const result=await runTransaction(dbRef(database,'settings/invoiceNumbering'),current=>{if(current&&nextNumber<current.nextNumber)return;return {...current,prefix,nextNumber,padding};},{applyLocally:false});
+        if(!result.committed)throw new Error('The next bill number cannot be lower than the current next number. Refresh the settings.');return result.snapshot.val();
+    }
+    async function allocateInvoiceNumber(){
+        const ref=dbRef(database,'settings/invoiceNumbering');await get(ref);let number;
+        const result=await runTransaction(ref,current=>{const state={...numberingDefaults,...current};if(!Number.isSafeInteger(state.nextNumber)||state.nextNumber>999999999)return;number=state.prefix+String(state.nextNumber).padStart(state.padding,'0');return {...state,nextNumber:state.nextNumber+1,lastAllocated:state.nextNumber};},{applyLocally:false});
+        if(!result.committed)throw new Error('Bill numbering needs to be updated in Settings.');const state=result.snapshot.val();return state.prefix+String(state.lastAllocated).padStart(state.padding,'0');
+    }
+    return{adminGetInvoiceNumbering,adminSaveInvoiceNumbering,adminSetInvoice,submitPaymentSlip,getUserPaymentSubmission,adminReviewPayment};
 }
 
 const firebaseConfig = {
@@ -2485,6 +2511,8 @@ window.FeealiBackend = {
     observeAuth,
     getAdminWasteForms,
     updateWasteFormStatus,
+    adminGetInvoiceNumbering:()=>entityBilling.adminGetInvoiceNumbering(),
+    adminSaveInvoiceNumbering:values=>entityBilling.adminSaveInvoiceNumbering(values),
     adminSetInvoice,
     adminAddDocument,
     adminAddEntityNote,
@@ -2570,6 +2598,10 @@ onAuthStateChanged(auth, user => { if (user) loadSavedFont().catch(console.error
 <script>
     // Navigation
     function showScreen(screenId) {
+        if (screenId === 'registerCollection' && (themePreview || !window.FeealiBackend?.auth?.currentUser)) {
+            showToast('Create an account and sign in to register for waste collection.');
+            screenId = 'loginScreen';
+        }
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
         document.getElementById(screenId).classList.add('active');
         if (typeof refreshThemeScreen === 'function') refreshThemeScreen(screenId);
@@ -3136,7 +3168,7 @@ onAuthStateChanged(auth, user => { if (user) loadSavedFont().catch(console.error
             startApplicationSubscription().catch(console.error);
             if (!adsUnsubscribe) adsUnsubscribe = backend.subscribeAdvertisements(renderBackendAds, console.error);
         } else {
-            if (['dashboard','accountScreen','monthlyBills','subscriptions','billHistory','profileScreen','myApplications','applicationProgressScreen'].includes(document.querySelector('.screen.active')?.id)) {
+            if (['dashboard','accountScreen','monthlyBills','subscriptions','billHistory','profileScreen','myApplications','applicationProgressScreen','registerCollection'].includes(document.querySelector('.screen.active')?.id)) {
                 toggleSidebar(false);
                 showScreen('loginScreen');
             }
@@ -3193,7 +3225,7 @@ function openThemePreview() {
 }
 function openWasteRegistration() {
     showScreen('registerCollection');
-    showWasteFormStep(0);
+    if (document.getElementById('registerCollection').classList.contains('active')) showWasteFormStep(0);
 }
 function refreshThemeScreen(screenId) {
     const navVisible = ['dashboard','accountScreen','searchBill'].includes(screenId) && (themePreview || Boolean(window.FeealiBackend?.auth?.currentUser));
@@ -4023,6 +4055,37 @@ renderSupervisorDuty=function(){if(supervisorPage==='dashboard')return superviso
 </script>
 <script>
 (() => {
+    let revision=0,objectUrl='',readyFile=null;
+    const safeName=value=>String(value||'invoice').replace(/[^a-z0-9_-]+/gi,'-').slice(0,90);
+    async function createPdf(form){
+        const {PDFDocument,StandardFonts,rgb}=PDFLib,pdf=await PDFDocument.create(),regular=await pdf.embedFont(StandardFonts.Helvetica),bold=await pdf.embedFont(StandardFonts.HelveticaBold);let page=pdf.addPage(),y=785;
+        const ink=rgb(.14,.23,.36),muted=rgb(.42,.49,.59),blue=rgb(.2,.36,.6);
+        async function line(value,{size=11,strong=false,color=ink}={}){
+            const text=String(value??'').replace(/[\r\n\t]+/g,' ').trim();if(!text)return;const unicode=/[^\x20-\x7e]/.test(text),font=strong?bold:regular;
+            const canvas=unicode?document.createElement('canvas'):null,ctx=canvas?.getContext('2d');if(ctx){await document.fonts?.ready;ctx.font=(strong?'bold ':'')+(size*3)+'px "Feeali Remote Thaana", "Feeali Thaana", "Noto Sans Thaana", sans-serif';}
+            const width=t=>ctx?ctx.measureText(t).width/3:font.widthOfTextAtSize(t,size);const lines=[];let current='';for(const char of text){if(current&&width(current+char)>490){lines.push(current.trim());current='';}current+=char;}if(current)lines.push(current.trim());
+            for(const row of lines){if(y<65){page=pdf.addPage();y=785;}if(!unicode)page.drawText(row,{x:50,y,size,font,color});else{const imageCanvas=document.createElement('canvas');imageCanvas.width=1500;imageCanvas.height=Math.ceil(size*6);const context=imageCanvas.getContext('2d');context.font=(strong?'bold ':'')+(size*3)+'px "Feeali Remote Thaana", "Feeali Thaana", "Noto Sans Thaana", sans-serif';context.fillStyle='#263c59';context.textBaseline='middle';context.direction=/[\u0780-\u07bf]/.test(row)?'rtl':'ltr';context.textAlign=context.direction==='rtl'?'right':'left';context.fillText(row,context.direction==='rtl'?1470:0,imageCanvas.height/2);const image=await pdf.embedPng(imageCanvas.toDataURL('image/png'));page.drawImage(image,{x:50,y:y-size*1.2,width:500,height:imageCanvas.height/3});}y-=Math.max(19,size*1.8);}
+        }
+        const invoice=form.invoice;pdf.setTitle('Feeali invoice '+invoice.number);pdf.setAuthor('Feeali Council');await line('FEEALI COUNCIL',{size:13,strong:true,color:blue});await line('Waste management invoice',{size:24,strong:true});y-=12;
+        await line('Bill number: '+(invoice.number||invoice.billNumber||form.registrationNumber||form.formId),{strong:true});await line('Billing month: '+(invoice.billingMonth||'Not specified'));await line('Status: '+(invoice.paymentStatus==='approved'?'Paid':'Unpaid'));
+        if(invoice.issuedAt)await line('Issued: '+new Date(invoice.issuedAt).toLocaleDateString('en',{timeZone:'Indian/Maldives',dateStyle:'medium'}));if(invoice.dueDate)await line('Due date: '+invoice.dueDate);y-=18;
+        await line('BILLED TO',{size:10,strong:true,color:muted});await line(form.propertyName||form.applicantName||'Collection account',{size:16,strong:true});await line(form.applicantName||'');await line([form.address,form.floor].filter(Boolean).join(' - '));await line('Registration: '+(form.registrationNumber||'-'));y-=22;
+        await line('MONTHLY WASTE COLLECTION',{size:10,strong:true,color:muted});await line('Total: MVR '+Number(invoice.amount||0).toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2}),{size:25,strong:true,color:blue});y-=22;
+        await line('PAYMENT DETAILS',{size:10,strong:true,color:muted});await line('Bank: '+(invoice.bankName||'Bank of Maldives'));await line('Account name: '+(invoice.accountName||'Feeali Council'));await line('Account number: '+(invoice.accountNumber||'7730000044669'),{strong:true});y-=20;await line('Use the bill number as your payment reference.',{size:10,color:muted});await line('Upload your payment slip in the Feeali app for council review.',{size:10,color:muted});
+        return pdf.save();
+    }
+    function clear(){revision++;if(objectUrl)URL.revokeObjectURL(objectUrl);objectUrl='';readyFile=null;}
+    async function prepare(form){clear();const token=revision,link=document.getElementById('downloadInvoicePdf'),share=document.getElementById('shareInvoicePdf');link.onclick=null;link.removeAttribute('href');link.setAttribute('aria-disabled','true');link.textContent='Preparing invoice PDF…';share.hidden=true;
+        try{const bytes=await createPdf(form);if(token!==revision)return;const name='Feeali-Invoice-'+safeName(form.invoice.number||form.formId)+'.pdf',blob=new Blob([bytes],{type:'application/pdf'});objectUrl=URL.createObjectURL(blob);link.href=objectUrl;link.download=name;link.textContent='Download / Save PDF';link.setAttribute('aria-disabled','false');if(typeof File!=='undefined'){readyFile=new File([blob],name,{type:'application/pdf'});share.hidden=!(navigator.canShare?.({files:[readyFile]}));}}
+        catch(error){if(token!==revision)return;link.textContent='Retry PDF download';link.onclick=event=>{event.preventDefault();prepare(form);};}
+    }
+    document.getElementById('shareInvoicePdf').onclick=async()=>{if(!readyFile)return;try{await navigator.share({files:[readyFile],title:'Feeali invoice'});}catch(error){if(error.name!=='AbortError')showToast('Use Download / Save PDF to save your invoice.',true);}};
+    document.getElementById('downloadInvoicePdf').addEventListener('click',event=>{if(event.currentTarget.getAttribute('aria-disabled')==='true')event.preventDefault();});
+    window.FeealiInvoiceDownload={prepare,clear,createPdf};
+})();
+
+</script><script>
+(() => {
     const byId = id => document.getElementById(id);
     const make = (tag, className, text) => {
         const node = document.createElement(tag);
@@ -4078,6 +4141,7 @@ renderSupervisorDuty=function(){if(supervisorPage==='dashboard')return superviso
     let revision=0, previousFocus, background=[];
     function showInvoice(form) {
         const modal = byId('invoiceModal'), invoice=form.invoice, token=++revision;
+        window.FeealiInvoiceDownload?.prepare(form);
         if (!modal.classList.contains('open')) {
             previousFocus=document.activeElement;
             background=[...document.querySelectorAll('.screen.active, #mainNavigation')].map(element=>({element,inert:element.inert}));
@@ -4085,7 +4149,7 @@ renderSupervisorDuty=function(){if(supervisorPage==='dashboard')return superviso
         }
         byId('fullInvoiceTotal').textContent=money(invoice.amount);
         byId('fullInvoicePeriod').textContent=monthTitle(invoiceMonth(invoice));
-        byId('fullInvoiceNumber').textContent='Invoice · '+(invoice.number || invoice.billNumber || form.formId);
+        byId('fullInvoiceNumber').textContent='Bill number · '+(invoice.number || invoice.billNumber || form.formId);
         byId('fullInvoiceProperty').textContent=form.propertyName || form.applicantName || 'Collection account';
         byId('fullInvoiceAddress').textContent=[form.registrationNumber,form.address].filter(Boolean).join(' · ');
         const date=invoice.issuedAt?new Date(invoice.issuedAt):null;
@@ -4124,7 +4188,7 @@ renderSupervisorDuty=function(){if(supervisorPage==='dashboard')return superviso
         byId('invoicePaymentMessage').textContent='Payment status could not be checked. Close and reopen this invoice to try again.';
     }
     function closeInvoice() {
-        revision++;byId('invoiceModal').classList.remove('open');byId('customerSlipFile').value='';byId('invoiceAttachment').replaceChildren();
+        window.FeealiInvoiceDownload?.clear();revision++;byId('invoiceModal').classList.remove('open');byId('customerSlipFile').value='';byId('invoiceAttachment').replaceChildren();
         background.forEach(({element,inert})=>{element.inert=inert;});background=[];
         if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true});
     }
