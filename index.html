@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- GENERATED GITHUB UPLOAD FILE | Build 2a087ff36ac1
+<!-- GENERATED GITHUB UPLOAD FILE | Build 47f01fe26c7a
      Includes the current source, embedded styles, scripts, fonts and images.
      Rebuild with tmp/build-single-file.cjs after editing source files. -->
 <html lang="en">
@@ -1532,6 +1532,29 @@ body{width:100%;min-width:0;margin:0;overflow:hidden}
  .collection-day-dialog .collection-card{padding:14px;border-radius:15px}
  .collection-day-dialog .collection-team-panel{padding:12px}
 }
+
+</style><style>
+.invoice-save-actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin:20px 0 16px}
+.invoice-save-actions .invoice-save-button,.invoice-save-actions .invoice-share-button{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;min-height:48px;padding:12px 10px;border-radius:12px;font-size:13px;line-height:1.4;text-align:center;box-sizing:border-box}
+.invoice-save-button::before{content:'';width:17px;height:17px;flex:0 0 17px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.invoice-save-actions .invoice-share-button{border:1px solid #dbe5f2;background:#edf3fc;color:#345c9f}
+.invoice-save-actions .invoice-share-button[hidden]{display:none}
+#invoiceAttachment:not(:empty){border:1px solid #dce5f0;border-radius:17px;background:#fff;overflow:hidden;box-shadow:0 5px 20px #24456606}
+.invoice-original-heading{display:flex;align-items:center;gap:11px;padding:16px;background:#f3f7fc;border-bottom:1px solid #e0e8f2}
+.invoice-original-icon{display:grid;place-items:center;flex:0 0 36px;height:36px;border:1px solid #dce6f3;border-radius:11px;background:#fff;color:#456b9d;font-size:19px}
+.invoice-original-heading h3{font-size:14px;line-height:1.5;color:#2e4767;margin:0 0 3px}
+.invoice-original-heading p{font-size:11px;line-height:1.6;color:#7b8ca2;margin:0}
+#invoiceAttachment .invoice-original-pdf{display:block;width:100%;max-width:100%;height:clamp(300px,60dvh,680px);border:0;border-radius:0;background:#e9eef5}
+#invoiceAttachment .invoice-original-image{display:block;width:100%;max-width:100%;height:auto;object-fit:contain;border:0;border-radius:0;background:#fff}
+#invoiceFileLink.invoice-document-link{display:flex;align-items:center;justify-content:space-between;min-height:44px;box-sizing:border-box;padding:12px 15px;margin:10px 0 20px;border:1px solid #dce5f0;border-radius:11px;background:#fff;color:#345c9f;text-decoration:none;font-size:12px;font-weight:650;line-height:1.5}
+#invoiceFileLink.invoice-document-link::after{content:'↗';font-size:17px}
+#invoiceFileLink[hidden]{display:none!important}
+:root[data-theme=dark] #invoiceAttachment:not(:empty){background:#101b29;border-color:#2a3c52}
+:root[data-theme=dark] .invoice-original-heading{background:#17283c;border-color:#2a3c52}
+:root[data-theme=dark] .invoice-original-heading h3{color:#dceafa}
+:root[data-theme=dark] .invoice-original-heading p{color:#a0b2c9}
+:root[data-theme=dark] :is(.invoice-original-icon,#invoiceFileLink.invoice-document-link,.invoice-save-actions .invoice-share-button){background:#1b2c43;color:#bad4f4;border-color:#30445f}
+@media(max-width:360px){.invoice-save-actions{grid-template-columns:minmax(0,1fr)}.invoice-original-heading{padding:12px}.invoice-original-heading p{font-size:10px}}
 
 </style></head>
 <body>
@@ -4501,10 +4524,29 @@ renderSupervisorDuty=function(){if(supervisorPage==='dashboard')return superviso
     }
     function clear(){revision++;if(objectUrl)URL.revokeObjectURL(objectUrl);objectUrl='';readyFile=null;}
     async function prepare(form){clear();const token=revision,link=document.getElementById('downloadInvoicePdf'),share=document.getElementById('shareInvoicePdf');link.onclick=null;link.removeAttribute('href');link.setAttribute('aria-disabled','true');link.textContent='Preparing invoice PDF…';share.hidden=true;
-        try{const bytes=await createPdf(form);if(token!==revision)return;const name='Feeali-Invoice-'+safeName(form.invoice.number||form.formId)+'.pdf',blob=new Blob([bytes],{type:'application/pdf'});objectUrl=URL.createObjectURL(blob);link.href=objectUrl;link.download=name;link.textContent='Download / Save PDF';link.setAttribute('aria-disabled','false');if(typeof File!=='undefined'){readyFile=new File([blob],name,{type:'application/pdf'});share.hidden=!(navigator.canShare?.({files:[readyFile]}));}}
+        try{
+            const source=String(form.invoice.fileDataUrl||''),uploaded=/^data:(application\/pdf|image\/(?:png|jpeg|webp));base64,/i.exec(source);
+            let blob,name;
+            if(uploaded){
+                const type=uploaded[1].toLowerCase(),binary=atob(source.slice(source.indexOf(',')+1)),bytes=Uint8Array.from(binary,char=>char.charCodeAt(0));
+                blob=new Blob([bytes],{type});const extension={'application/pdf':'pdf','image/png':'png','image/jpeg':'jpg','image/webp':'webp'}[type];
+                name=String(form.invoice.fileName||'').replace(/[^a-z0-9_. -]/gi,'-').slice(0,110)||'Council-Invoice-'+safeName(form.invoice.number||form.formId)+'.'+extension;
+                if(!name.toLowerCase().endsWith('.'+extension)&&!(extension==='jpg'&&/\.jpe?g$/i.test(name)))name+='.'+extension;
+            }else{
+                const bytes=await createPdf(form);blob=new Blob([bytes],{type:'application/pdf'});name='Feeali-Invoice-'+safeName(form.invoice.number||form.formId)+'.pdf';
+            }
+            if(token!==revision)return;
+            objectUrl=URL.createObjectURL(blob);link.href=objectUrl;link.download=name;link.textContent=uploaded?'Download original invoice':'Download / Save PDF';link.setAttribute('aria-disabled','false');
+            if(uploaded){
+                const original=document.getElementById('invoiceFileLink');if(original)original.href=objectUrl;
+                const preview=document.querySelector?.('#invoiceAttachment iframe');if(preview)preview.src=objectUrl+'#view=FitH';
+            }
+            if(typeof File!=='undefined')readyFile=new File([blob],name,{type:blob.type});
+            share.hidden=false;share.textContent=readyFile&&navigator.canShare?.({files:[readyFile]})?'Save / Share':'Save a copy';
+        }
         catch(error){if(token!==revision)return;link.textContent='Retry PDF download';link.onclick=event=>{event.preventDefault();prepare(form);};}
     }
-    document.getElementById('shareInvoicePdf').onclick=async()=>{if(!readyFile)return;try{await navigator.share({files:[readyFile],title:'Feeali invoice'});}catch(error){if(error.name!=='AbortError')showToast('Use Download / Save PDF to save your invoice.',true);}};
+    document.getElementById('shareInvoicePdf').onclick=async()=>{if(!objectUrl)return;try{if(readyFile&&navigator.canShare?.({files:[readyFile]}))await navigator.share({files:[readyFile],title:'Council invoice'});else document.getElementById('downloadInvoicePdf').click();}catch(error){if(error.name!=='AbortError')showToast('Use Download to save your invoice.',true);}};
     document.getElementById('downloadInvoicePdf').addEventListener('click',event=>{if(event.currentTarget.getAttribute('aria-disabled')==='true')event.preventDefault();});
     window.FeealiInvoiceDownload={prepare,clear,createPdf};
 })();
@@ -4593,6 +4635,8 @@ renderSupervisorDuty=function(){if(supervisorPage==='dashboard')return superviso
         link.hidden=!supported;link.removeAttribute('href');
         if (supported) {
             link.href=source;
+            const heading=make('div','invoice-original-heading');heading.append(make('span','invoice-original-icon','↗'),make('div','',undefined));
+            heading.lastChild.append(make('h3','','Council invoice'),make('p','','Preview the original document issued by the council.'));attachment.append(heading);
             if (source.startsWith('data:image/')) {const image=make('img','invoice-original-image');image.src=source;image.alt='Council-issued invoice';attachment.append(image);}
             else {const frame=make('iframe','invoice-original-pdf');frame.title='Council-issued invoice PDF';frame.src=source;attachment.append(frame);}
         }
